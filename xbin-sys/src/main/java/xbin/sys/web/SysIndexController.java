@@ -1,24 +1,32 @@
 package xbin.sys.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import xbin.sys.facade.SysUserFacade;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @Controller
 public class SysIndexController {
 
-    @Autowired
+    @Resource
     private SysUserFacade sysUserFacade;
 
+
     @RequestMapping("/sysindex.html")
-    public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView index(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ModelAndView ret = new ModelAndView();
-        System.out.println(sysUserFacade.getUser());
+        List<JSONObject> list = this.sysUserFacade.getList();
+        for (JSONObject jsonObject : list) {
+            System.out.println(jsonObject);
+        }
+        System.out.println(this.sysUserFacade.getById("admin"));
+        System.out.println(this.sysUserFacade.generateKey());
         return ret;
     }
     

@@ -260,11 +260,15 @@
             <version>${curator.version}</version>
         </dependency>
         <!-- zookeeper jar end -->
+
+        <!-- redis jar begin -->
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>${jedis.version}</version>
         </dependency>
+        <!-- redis jar end -->
+
         <!-- dubbox jar begin -->
         <dependency>
             <groupId>com.alibaba</groupId>

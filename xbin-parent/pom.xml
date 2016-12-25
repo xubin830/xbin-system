@@ -7,12 +7,12 @@
     <groupId>vip.xubin</groupId>
     <artifactId>xbin-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>../xbin-sys</module>
-        <module>../xbin-com</module>
-        <module>../xbin-sys-facade</module>
-        <module>../xbin-sys-service</module>
-    </modules>
+    <!--<modules>-->
+        <!--<module>../xbin-sys</module>-->
+        <!--<module>../xbin-com</module>-->
+        <!--<module>../xbin-sys-facade</module>-->
+        <!--<module>../xbin-sys-service</module>-->
+    <!--</modules>-->
     <packaging>pom</packaging>
 
     <distributionManagement>

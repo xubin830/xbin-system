@@ -7,7 +7,7 @@ export JRE_HOME=$JAVA_HOME/jre
 EXEC_SHELL_NAME=sys-service\.sh
 ## service name
 SERVICE_NAME=xbin-sys-service
-SERVICE_DIR=/usr/local/workspace/xbin-sys-service
+SERVICE_DIR=/usr/local/workspace/sys-service
 JAR_NAME=$SERVICE_NAME\.jar
 PID=$SERVICE_NAME\.pid
 

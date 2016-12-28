@@ -299,6 +299,6 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>xbin-sys</finalName>
+        <finalName>xbin-mst</finalName>
     </build>
 </project>

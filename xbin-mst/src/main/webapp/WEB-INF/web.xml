@@ -104,7 +104,7 @@
     <init-param>
       <param-name>casServerUrlPrefix</param-name>
       <!--这里为CAS服务器的地址，必须使用所创建的域名，不然验证证书不通过 -->
-      <param-value>https://www.xubin.vip:8443/cas/login</param-value>
+      <param-value>https://www.xubin.vip:8443/cas</param-value>
     </init-param>
     <init-param>
       <param-name>serverName</param-name>

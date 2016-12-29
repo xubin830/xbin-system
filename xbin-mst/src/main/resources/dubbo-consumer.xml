@@ -25,6 +25,6 @@
     <dubbo:protocol name="dubbo" port="${dubbox.port}" serialization="kryo" optimizer="xbin.mst.serial.SerializationOptimizerImpl" />
 
 	<!-- 生成远程服务接口配置 -->
-	<dubbo:reference interface="xbin.mst.facade.MstSiteFacade" id="mstSiteFacade" />
+	<!--<dubbo:reference interface="xbin.mst.facade.MstSiteFacade" id="mstSiteFacade" />-->
 	
 </beans>

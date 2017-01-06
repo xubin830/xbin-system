@@ -15,6 +15,31 @@
     <!--</modules>-->
     <packaging>pom</packaging>
 
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <url>http://localhost:8077/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <url>http://localhost:8077/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
     <distributionManagement>
         <repository>
             <id>releases</id>
@@ -417,6 +442,12 @@
             <groupId>org.jasig.cas.client</groupId>
             <artifactId>cas-client-core</artifactId>
             <version>3.1.12</version>
+        </dependency>
+        <!-- fastdfs -->
+        <dependency>
+            <groupId>org.csource</groupId>
+            <artifactId>fastdfs</artifactId>
+            <version>1.24</version>
         </dependency>
     </dependencies>
     </dependencyManagement>

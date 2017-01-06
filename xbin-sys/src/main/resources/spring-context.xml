@@ -33,8 +33,11 @@
 
 	<!-- 注解方式配置事物 -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
-	
-	<!-- 注解解析 -->
+
+    <!-- 引入Schedule配置 -->
+    <import resource="classpath:spring-scheduler.xml"/>
+
+    <!-- 注解解析 -->
 	<context:annotation-config />
 	
 	<!-- 扫描所有spring bean注解 -->

@@ -285,6 +285,10 @@
             <groupId>org.jasig.cas.client</groupId>
             <artifactId>cas-client-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.csource</groupId>
+            <artifactId>fastdfs</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <finalName>xbin-com</finalName>

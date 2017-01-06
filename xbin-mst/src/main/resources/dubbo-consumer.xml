@@ -16,7 +16,7 @@
     <dubbo:application name="${dubbox.application}" owner="programmer" organization="dubbox"/>
 
 	<!-- zookeeper注册中心  zookeeper://192.168.1.111:2181 -->
-    <dubbo:registry address="${dubbox.registry.address}"/>
+    <dubbo:registry timeout="${dubbox.timeout}" address="${dubbox.registry.address}"/>
     
     <!-- 扫描dubbox注解位置 -->
     <dubbo:annotation package="xbin" />
@@ -25,6 +25,6 @@
     <dubbo:protocol name="dubbo" port="${dubbox.port}" serialization="kryo" optimizer="xbin.mst.serial.SerializationOptimizerImpl" />
 
 	<!-- 生成远程服务接口配置 -->
-	<!--<dubbo:reference interface="xbin.mst.facade.MstSiteFacade" id="mstSiteFacade" />-->
+	<dubbo:reference interface="xbin.mst.facade.MstSiteFacade" id="mstSiteFacade" />
 	
 </beans>

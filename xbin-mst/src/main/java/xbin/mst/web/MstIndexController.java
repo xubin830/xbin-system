@@ -28,24 +28,24 @@ public class MstIndexController {
      * @param response 页面响应
      * @return ModelAndView 模型视图
      */
-    @RequestMapping("/mstindex.html")
-    public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView ret = new ModelAndView();
-        String userId = RequestUtils.getCurrentUserId(request);
-        String userName = RequestUtils.getCurrentUserName(request);
-        String roleCode = RequestUtils.getCurrentRoleCode(request);
-        String orgId = RequestUtils.getCurrentOrgId(request);
-        List<JSONObject> funcList = this.roleFuncComDao.getFuncList(roleCode, "02");
-        ret.addObject("funcList", funcList.toString());
-        return ret;
-    }
-    
-    @RequestMapping("/mstFuncList.json")
-    public void sysFuncList(HttpServletRequest request, HttpServletResponse response, String id){
-    	String roleCode = RequestUtils.getCurrentRoleCode(request);
-    	List<JSONObject> records = new ArrayList<JSONObject>();
-    	List<JSONObject> funcList = this.roleFuncComDao.getFuncList(roleCode, id);
-    	for (JSONObject jsonObject : funcList) {
+	@RequestMapping("/mstindex.html")
+	public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView ret = new ModelAndView();
+		String userId = RequestUtils.getCurrentUserId(request) == null ? "admin" : RequestUtils.getCurrentUserId(request);
+		String userName = RequestUtils.getCurrentUserName(request) == null ? "admin" : RequestUtils.getCurrentUserName(request);
+		String roleCode = RequestUtils.getCurrentRoleCode(request) == null ? "SYS_ADMIN" : RequestUtils.getCurrentRoleCode(request);
+		String orgId = RequestUtils.getCurrentOrgId(request) == null ? "00000000000000000000000000000000" : RequestUtils.getCurrentOrgId(request);
+		List<JSONObject> funcList = this.roleFuncComDao.getFuncList(roleCode, "02");
+		ret.addObject("funcList", funcList.toString());
+		return ret;
+	}
+
+	@RequestMapping("/mstFuncList.json")
+	public void sysFuncList(HttpServletRequest request, HttpServletResponse response, String id){
+		String roleCode = RequestUtils.getCurrentRoleCode(request) == null ? "SYS_ADMIN" : RequestUtils.getCurrentRoleCode(request);
+		List<JSONObject> records = new ArrayList<JSONObject>();
+		List<JSONObject> funcList = this.roleFuncComDao.getFuncList(roleCode, id);
+		for (JSONObject jsonObject : funcList) {
 			JSONObject record = new JSONObject();
 			//'id' ,'text' , 'type' , 'leaf', 'url'
 			record.put("id", jsonObject.getString("FUNC_CODE"));
@@ -55,9 +55,9 @@ public class MstIndexController {
 			record.put("url", jsonObject.getString("FUNC_PATH"));
 			records.add(record);
 		}
-    	ResponseUtils.putJsonResponse(response, records);
-    	
-    }
+		ResponseUtils.putJsonResponse(response, records);
+
+	}
     
     
 
